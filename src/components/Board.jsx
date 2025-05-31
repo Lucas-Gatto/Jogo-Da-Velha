@@ -1,5 +1,6 @@
 import React from "react";
 import Square from "./Square";
+import './Board.css'
 
 class Board extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Board extends React.Component {
     }
 
     return (
-      <div>
+      <div className = "board">
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
@@ -70,7 +71,7 @@ class Board extends React.Component {
           {this.renderSquare(8)}
         </div>
         {(winner || isBoardFull) && (
-          <button onClick={() => this.resetGame()}>Recomeçar</button>
+          <button className="reset" onClick={() => this.resetGame()}>Recomeçar</button>
         )}
       </div>
     );
